@@ -49,8 +49,13 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
 
 }
 
+img{
+	width: 100%;
+}
+
 .wrapper{
 	width: 100%;
+	overflow: hidden;
 }
 
 .container{
@@ -315,11 +320,17 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
 	align-items: center;
 }
 
-.white-block__left, .black-block__right{
-	min-height: 241px;
-	max-width: 600px;
+.white-block__left{
 	flex-basis: 50%;
 	text-align: center;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.white-block__content, .black-block__content{
+	min-height: 241px;
+	max-width: 600px;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -334,7 +345,6 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
 	text-transform: uppercase;
 	position: relative;
 	padding-bottom: 13px;
-	/*transform: translateX(15.5%);*/
 }
 
 .white-block__title, .white-block__text, .white-block__subtitle{
@@ -365,26 +375,33 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
 	line-height: 24px;
 }
 
-.white-block__right, .black-block__left{
+.white-block__right{
 	flex-basis: 50%;
 	position: relative;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
 }
 
 .white-block__photo{
-	transform: translateX(-1.5%);
+	max-width: 575px;
+	max-height: 575px;
+	position: relative;
 }
 
-.white-block__yellow-frame, .black-block__yellow-frame{
+.white-block__photo::after{
+	content: '';
 	width: 250px;
 	height: 250px;
 	border: 20px solid #E8C300;
-	box-sizing: border-box;
 	filter: drop-shadow(0px 0px 100px rgba(0, 0, 0, 0.5));
 	border-radius: 5px;
 	position: absolute;
-	right: 0;
+	right: -11.5%;
 	top: 50%;
 	transform: translateY(-50%);
+	z-index: 2;
+	box-sizing: border-box;
 }
 
 /*-----------main__our-team-----------*/
@@ -397,10 +414,6 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
 	position: relative;
 }
 
-.main__our-team .title{
-	padding-top: 45px;
-}
-
 .black-block{
 	max-height: 475px;
 	width: 100%;
@@ -409,8 +422,41 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
 	justify-content: space-between;
 }
 
-.black-block__yellow-frame{
-	left: 0;
+.black-block__left{
+	flex-basis: 50%;
+	position: relative;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+.black-block__right{
+	flex-basis: 50%;
+	text-align: center;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+.black-block__photo{
+	max-width: 575px;
+	max-height: 575px;
+	position: relative;
+}
+
+.black-block__photo::after{
+	content: '';
+	width: 250px;
+	height: 250px;
+	border: 20px solid #E8C300;
+	filter: drop-shadow(0px 0px 100px rgba(0, 0, 0, 0.5));
+	border-radius: 5px;
+	position: absolute;
+	left: -11.5%;
+	top: 50%;
+	transform: translateY(-50%);
+	z-index: 2;
+	box-sizing: border-box;
 }
 
 .black-block__title, .black-block__text, .black-block__subtitle{
@@ -515,8 +561,6 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
 }
 
 /*-------------menu------------*/
-
-
 .menu-box{
 	width: 100%;
 	max-height: 920px;
@@ -610,7 +654,6 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
 	position: relative;
 }
 
-
 .private__bottom{
 	font-size: 12px;
 	line-height: 12px;
@@ -621,47 +664,52 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
 	font-weight: bold;
 }
 
-.private__weddings::after, .private__corporate::after{
-	content: '';
-	height: 475.5px;
-	width: 80px;
+.rotate{
+	/*height: 475.5px;
+	width: 80px;*/
+	height: 83%;
+	width: 14%;
 	background-color: #000;
-}
-
-.private__weddings::after{
-	position: absolute;
-	right: 115px;
-	bottom: 50px;
-}
-
-.private__rotate-left, .private__rotate-right{
-	color: #fff;
-	font-family: 'Banny Round';
-	font-size: 24px;
-	line-height: 12px;
-	text-transform: uppercase;
 	z-index: 2;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
 }
 
 .private__rotate-left{
-	transform: rotate(90deg);
 	position: absolute;
-	right: 15%;
-	top: 22%;
-}
-
-.private__corporate::after{
-	position: absolute;
-	right: 76.1%;
-	bottom: 8.6%;
+	right: 8.5%;
+	top: 8.5%;
+	border-radius: 0 5px 5px 0;
 }
 
 .private__rotate-right{
-	transform: rotate(-90deg);
 	position: absolute;
-	left: -3%;
-	bottom: 32.5%;
+	left: 8.5%;
+	bottom: 8.5%;
+	border-radius: 5px 0 0 5px;
 }
+
+.rotate p{
+	color: #fff;
+	font-family: 'Banny Round';
+	font-size: 24px;
+	text-transform: uppercase;
+	flex-basis: 100%;
+	padding: 20px;
+}
+
+.private__rotate-left p{
+	transform: rotate(90deg) translateX(32%);
+	align-self: flex-start;
+}
+
+.private__rotate-right p{
+	transform: rotate(-90deg) translateX(32%);
+	align-self: flex-end;
+}
+
+
 
 /*----------photo-gallery---------*/
 

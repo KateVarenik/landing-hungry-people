@@ -9,25 +9,26 @@
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
 	
 	<script src="https://kit.fontawesome.com/de534813ca.js" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
 
 </head>
 <body>
 	<div class="wrapper">
-		<header class="header">
+		<header class="header" id="home">
 			<div class="container">
 				<div class="menu">
 						<ul class="menu__left navbar">
-							<li><a href="#">HOME</a></li>
-							<li><a href="#">ABOUT</a></li>
-							<li><a href="#">TEAM</a></li>
-							<li><a href="#">BOOKING</a></li>
+							<li><a href="#home">HOME</a></li>
+							<li><a href="#about">ABOUT</a></li>
+							<li><a href="#team">TEAM</a></li>
+							<li><a href="#booking">BOOKING</a></li>
 						</ul>	
 					<img src="img/Vector.svg" alt="">
 						<ul class="menu__right navbar">
-							<li><a href="#">MENU</a></li>
-							<li><a href="#">GALERIE</a></li>
-							<li><a href="#">EVENTS</a></li>
-							<li><a href="#">CONTACT</a></li>
+							<li><a href="#menu">MENU</a></li>
+							<li><a href="#galerie">GALERIE</a></li>
+							<li><a href="#events">EVENTS</a></li>
+							<li><a href="#contact">CONTACT</a></li>
 						</ul>
 				</div>
 			</div>
@@ -66,28 +67,30 @@
 		</header>
 
 		<main class="main">
-			<div class="main__about-us">
+			<div class="main__about-us" id="about">
 				<div class="container">
 					<div class="top-side"></div>
 					<div class="white-block">
 						<div class="white-block__left">
-							<h2 class="white-block__title">about us</h2>
-							<p class="white-block__subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at velit maximus, molestie est a, tempor magna.</p>
+							<div class="white-block__content">
+								<h2 class="white-block__title">about us</h2>
+								<p class="white-block__subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at velit maximus, molestie est a, tempor magna.</p>
 
-							<p class="white-block__text">Integer ullamcorper neque eu purus euismod, ac faucibus mauris posuere. Morbi non ultrices ligula. Sed dictum, enim sed ullamcorper feugiat, dui odio vehicula eros, a sollicitudin lorem quam nec sem. Mauris tincidunt feugiat diam convallis pharetra. Nulla facilisis semper laoreet.</p>
+								<p class="white-block__text">Integer ullamcorper neque eu purus euismod, ac faucibus mauris posuere. Morbi non ultrices ligula. Sed dictum, enim sed ullamcorper feugiat, dui odio vehicula eros, a sollicitudin lorem quam nec sem. Mauris tincidunt feugiat diam convallis pharetra. Nulla facilisis semper laoreet.</p>
+							</div>
+							
 						</div>
 						<div class="white-block__right">
 							<div class="white-block__photo">
 								<img src="img/about-img.png" alt="">
 							</div>
-							<div class="white-block__yellow-frame"></div>
 						</div>
 					</div>
 					<div class="bottom-side"></div>
 				</div>
 			</div>
 
-			<div class="main__our-team">
+			<div class="main__our-team" id="team">
 				<div class="line-box"></div>
 				<div class="container">
 					<div class="top-side">
@@ -98,21 +101,23 @@
 							<div class="black-block__photo">
 								<img src="img/Rectangle.png" alt="">
 							</div>
-							<div class="black-block__yellow-frame"></div>
 						</div>
 
 						<div class="black-block__right">
-							<h2 class="black-block__title">MASTER CHEF</h2>
-							<p class="black-block__subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at velit maximus, molestie est a, tempor magna.</p>
+							<div class="black-block__content">
+								<h2 class="black-block__title">MASTER CHEF</h2>
+								<p class="black-block__subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at velit maximus, molestie est a, tempor magna.</p>
 
-							<p class="black-block__text">Integer ullamcorper neque eu purus euismod, ac faucibus mauris posuere. Morbi non ultrices ligula. Sed dictum, enim sed ullamcorper feugiat, dui odio vehicula eros, a sollicitudin lorem quam nec sem. Mauris tincidunt feugiat diam convallis pharetra. Nulla facilisis semper laoreet.</p>
+								<p class="black-block__text">Integer ullamcorper neque eu purus euismod, ac faucibus mauris posuere. Morbi non ultrices ligula. Sed dictum, enim sed ullamcorper feugiat, dui odio vehicula eros, a sollicitudin lorem quam nec sem. Mauris tincidunt feugiat diam convallis pharetra. Nulla facilisis semper laoreet.</p>
+							</div>
+							
 						</div>
 					</div>
 					<div class="bottom-side"></div>
 				</div>
 			</div>
 			
-			<div class="book-table">
+			<div class="book-table" id="booking">
 				<div class="container">
 					<div class="top-side"></div>
 					<div class="white-block">
@@ -175,7 +180,6 @@
 							<div class="white-block__photo">
 								<img src="img/book-img.png" alt="">
 							</div>
-							<div class="white-block__yellow-frame"></div>
 						</div>
 
 					</div>
@@ -196,14 +200,15 @@
 							<div class="black-block__photo">
 								<img src="img/Rectangle2.png" alt="">
 							</div>
-							<div class="black-block__yellow-frame"></div>
 						</div>
 
 						<div class="black-block__right">
-							<h2 class="black-block__title">chocolate pancakes</h2>
-							<p class="black-block__subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at velit maximus, molestie est a, tempor magna.</p>
+							<div class="black-block__content">
+								<h2 class="black-block__title">chocolate pancakes</h2>
+								<p class="black-block__subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at velit maximus, molestie est a, tempor magna.</p>
 
-							<p class="black-block__text">Integer ullamcorper neque eu purus euismod, ac faucibus mauris posuere. Morbi non ultrices ligula. Sed dictum, enim sed ullamcorper feugiat, dui odio vehicula eros, a sollicitudin lorem quam nec sem. Mauris tincidunt feugiat diam convallis pharetra. Nulla facilisis semper laoreet.</p>
+								<p class="black-block__text">Integer ullamcorper neque eu purus euismod, ac faucibus mauris posuere. Morbi non ultrices ligula. Sed dictum, enim sed ullamcorper feugiat, dui odio vehicula eros, a sollicitudin lorem quam nec sem. Mauris tincidunt feugiat diam convallis pharetra. Nulla facilisis semper laoreet.</p>
+							</div>
 						</div>
 					</div>
 					<div class="bottom-side">
@@ -214,7 +219,7 @@
 				</div>
 			</div>
 
-			<div class="menu-box">
+			<div class="menu-box" id="menu">
 				<div class="container">
 					<div class="top-side"></div>
 					<div class="menu-box__content">
@@ -484,7 +489,7 @@
 				</div>
 			</div>
 
-			<div class="private">
+			<div class="private" id="events">
 				<div class="line-box"></div>
 				<div class="container">
 					<div class="top-side">
@@ -494,18 +499,19 @@
 						<div class="black-block__left">
 							<div class="black-block__photo private__weddings">
 								<img src="img/wedding.png" alt="">
-								<div class="private__rotate-left">weddings</div>
+								<div class="private__rotate-left rotate">
+									<p>weddings</p>
+								</div>
 							</div>
-							<div class="black-block__yellow-frame"></div>
-							
 						</div>
 
-						<div class="black-block__right">
-							<div class="black-block__photo private__corporate">
+						<div class="white-block__right private__right">
+							<div class="white-block__photo private__corporate">
 								<img src="img/corporate.png" alt="">
-								<div class="private__rotate-right">corporate parties</div>
+								<div class="private__rotate-right rotate">
+									<p>corporate parties</p>
+								</div>
 							</div>
-							<div class="white-block__yellow-frame"></div>
 						</div>
 					</div>
 				</div>
@@ -514,22 +520,22 @@
 				</div>
 			</div>
 
-			<div class="photo-gallery">
-			<div class="photo-gallery__item">
-				<img src="img/gallery1.jpg" alt="">
-			</div>
-			<div class="photo-gallery__item">
-				<img src="img/gallery2.jpg" alt="">
-			</div>
-			<div class="photo-gallery__item">
-				<img src="img/gallery3.jpg" alt="">
-			</div>
-			<div class="photo-gallery__item">
-				<img src="img/gallery4.jpg" alt="">
-			</div>
+			<div class="photo-gallery" id="galerie">
+				<div class="photo-gallery__item">
+					<img src="img/gallery1.jpg" alt="">
+				</div>
+				<div class="photo-gallery__item">
+					<img src="img/gallery2.jpg" alt="">
+				</div>
+				<div class="photo-gallery__item">
+					<img src="img/gallery3.jpg" alt="">
+				</div>
+				<div class="photo-gallery__item">
+					<img src="img/gallery4.jpg" alt="">
+				</div>
 			</div>
 
-			<div class="contact">
+			<div class="contact" id="contact">
 				<div class="container">
 					<div class="top-side"></div>
 					<div class="contact__content">
@@ -576,6 +582,14 @@
 		</footer>
 	</div>
 	
+<script type="text/javascript">
+
+	var scroll = new SmoothScroll('a[href*="#"]', {
+		speed: 1000,
+		speedAsDuration: true
+	}	);
+
+</script>	
 
 </body>
 </html>
