@@ -41,8 +41,8 @@
 					</div>
 
 					<div class="header__buttons">
-						<a class="book btn" href="#">BOOK TABLE</a>
-						<a class="explore btn" href="#">EXPLORE</a>
+						<div class="book btn" onclick="openForm()">BOOK TABLE</div>
+						<a href="#" class="explore btn">EXPLORE</a>
 					</div>
 
 				</div>
@@ -58,13 +58,74 @@
 				</div>
 
 				<div class="icon-down">
-					<i class="fas fa-angle-down"></i>
+					<a href="#about"><i class="fas fa-angle-down"></i></a>
 				</div>
 
 				<div class="line-box header-box"></div>
-
+			
 			</div>
+			
+
 		</header>
+
+		<div class="pop-up" id="popup1" >
+			<div class="pop-up__container">
+				<img src="img/close.png" alt="" class="closeBtn" onclick="closeForm()">
+				<div class="white-block__left book-table__left">
+					<h2 class="white-block__title">book a table</h2>
+					<div class="form-book">
+						<form action="#" method="post" enctype="multipart/form-data">
+							<div class="form-cell book__cell">
+								<input type="text" name="username" placeholder="Name">
+							</div>
+							<div class="form-cell book__cell">
+								<input type="email" name="useremail" placeholder="Email">
+							</div>
+							<div class="form-cell book__cell">
+								<input type="tel" name="userphone" placeholder="Phone" >
+							</div>
+							<div class="form-cell book__cell">
+								<select name="guests">
+								<option value="">People</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+								<option value="9">9</option>
+								<option value="10">10</option>
+								<option value="more-than10">10+</option>
+							</select>
+							</div>
+							<div class="form-cell book__cell">
+								<input type="text" name="date" placeholder="Date(mm/dd)">
+							</div>
+							<div class="form-cell book__cell">
+								<select name="time" id="">
+								<option value="">Time</option>
+								<option value="10-00">10:00</option>
+								<option value="11-00">11:00</option>
+								<option value="12-00">12:00</option>
+								<option value="13-00">13:00</option>
+								<option value="14-00">14:00</option>
+								<option value="15-00">15:00</option>
+								<option value="16-00">16:00</option>
+								<option value="17-00">17:00</option>
+								<option value="18-00">18:00</option>
+								<option value="19-00">19:00</option>
+								<option value="20-00">20:00</option>
+								<option value="21-00">21:00</option>
+							</select>
+							</div>
+							<button class="book-table__button button" type="submit">BOOK NOW</button>
+						</form>
+					</div>
+				</div>					
+			</div>
+		</div>
 
 		<main class="main">
 			<div class="main__about-us" id="about">
@@ -198,23 +259,29 @@
 					<div class="black-block">
 						<div class="black-block__left">
 							<div class="black-block__photo">
-								<img src="img/Rectangle2.png" alt="">
+								<img src="img/pasta.png" alt="" id="picture">
 							</div>
 						</div>
 
 						<div class="black-block__right">
 							<div class="black-block__content">
-								<h2 class="black-block__title">chocolate pancakes</h2>
-								<p class="black-block__subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at velit maximus, molestie est a, tempor magna.</p>
+								<h2 class="black-block__title" id="specialtiesTitle">pasta bolognese</h2>
+								<p class="black-block__subtitle" id="specialtiesSubtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at velit maximus, molestie est a, tempor magna.</p>
 
-								<p class="black-block__text">Integer ullamcorper neque eu purus euismod, ac faucibus mauris posuere. Morbi non ultrices ligula. Sed dictum, enim sed ullamcorper feugiat, dui odio vehicula eros, a sollicitudin lorem quam nec sem. Mauris tincidunt feugiat diam convallis pharetra. Nulla facilisis semper laoreet.</p>
+								<p class="black-block__text" id="specialtiesText">Integer ullamcorper neque eu purus euismod, ac faucibus mauris posuere. Morbi non ultrices ligula. Sed dictum, enim sed ullamcorper feugiat, dui odio vehicula eros, a sollicitudin lorem quam nec sem. Mauris tincidunt feugiat diam convallis pharetra. Nulla facilisis semper laoreet.</p>
 							</div>
 						</div>
 					</div>
 					<div class="bottom-side">
-						<div class="slider-circle"></div>
-						<div class="slider-circle selected"></div>
-						<div class="slider-circle"></div>
+						<div class="slider-btn">
+							<div class="slider-circle"></div>
+						</div>
+						<div class="slider-btn selected">
+							<div class="slider-circle"></div>
+						</div>
+						<div class="slider-btn">
+							<div class="slider-circle"></div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -588,6 +655,49 @@
 		speed: 1000,
 		speedAsDuration: true
 	}	);
+
+	function openForm() {
+  document.getElementById("popup1").style.visibility = "visible";
+	}
+
+	function closeForm() {
+  document.getElementById("popup1").style.visibility = "hidden";
+	}
+
+	var sliderBtn = document.getElementsByClassName("slider-btn");
+	var picture = document.getElementById("picture");
+	var specialtiesTitle = document.getElementById("specialtiesTitle");
+	var specialtiesSubtitle = document.getElementById("specialtiesSubtitle");
+	var specialtiesText = document.getElementById("specialtiesText");
+
+
+	for (let i=0; i<sliderBtn.length; i++){
+		sliderBtn[i].addEventListener('click', function(){
+			let current = document.getElementsByClassName("selected");
+			current[0].className = current[0].className.replace("selected", "");
+			this.className += " selected";
+		});
+	}
+
+	sliderBtn[0].onclick = function(){
+		picture.src = "img/icecream.png";
+		specialtiesTitle.innerHTML = "strawberry ice cream";
+		specialtiesSubtitle.innerHTML = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at velit maximus, molestie est a, tempor magna.";
+		specialtiesText.innerHTML = "Integer ullamcorper neque eu purus euismod, ac faucibus mauris posuere. Morbi non ultrices ligula. Sed dictum, enim sed ullamcorper feugiat, dui odio vehicula eros, a sollicitudin lorem quam nec sem. Mauris tincidunt feugiat diam convallis pharetra. Nulla facilisis semper laoreet.";
+
+	}
+	sliderBtn[1].onclick = function(){
+		picture.src = "img/pasta.png";
+		specialtiesTitle.innerHTML = "pasta bolognese";
+		specialtiesSubtitle.innerHTML = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at velit maximus, molestie est a, tempor magna.";
+		specialtiesText.innerHTML = "Integer ullamcorper neque eu purus euismod, ac faucibus mauris posuere. Morbi non ultrices ligula. Sed dictum, enim sed ullamcorper feugiat, dui odio vehicula eros, a sollicitudin lorem quam nec sem. Mauris tincidunt feugiat diam convallis pharetra. Nulla facilisis semper laoreet.";
+	}
+	sliderBtn[2].onclick = function(){
+		picture.src = "img/pancake.png";
+		specialtiesTitle.innerHTML = "chocolate pancakes";
+		specialtiesSubtitle.innerHTML = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at velit maximus, molestie est a, tempor magna.";
+		specialtiesText.innerHTML = "Integer ullamcorper neque eu purus euismod, ac faucibus mauris posuere. Morbi non ultrices ligula. Sed dictum, enim sed ullamcorper feugiat, dui odio vehicula eros, a sollicitudin lorem quam nec sem. Mauris tincidunt feugiat diam convallis pharetra. Nulla facilisis semper laoreet.";
+	}
 
 </script>	
 

@@ -90,16 +90,36 @@ img{
 }
 
 .navbar li a{
+	display: inline-block;
 	font-style: normal;
 	font-weight: bold;
 	font-size: 12px;
 	color: #fff;
+	transition: transform 0.5s;
+}
+
+.navbar li a:hover{
+	transform: scale(1.5);
 }
 
 .menu img{
 	margin: 25px;
 	width: 150px;
 	height: 150px;
+	z-index: 2;
+}
+
+.menu img:hover{
+	animation: logo 1s linear 0s infinite normal none;
+}
+
+@keyframes logo{
+	0%{
+		transform: rotate(0);
+	}
+	100%{
+		transform: rotate(180deg);
+	}
 }
 
 .menu__right{
@@ -186,6 +206,8 @@ img{
 	font-weight: bold;
 	font-size: 12px;
 	line-height: 20px;
+	z-index: 2;
+	cursor: pointer;
 }
 
 .book{
@@ -195,6 +217,12 @@ img{
 .explore{
 	border: 1px solid rgba(255, 255, 255, 0.5);
 	background: transparent;
+}
+
+.btn:hover{
+	box-shadow: 0px 0px 14px 2px #fff;
+	background-color: rgba(17, 14, 9, 0.8);
+	color: #e8c300;
 }
 
 .table{
@@ -234,6 +262,12 @@ img{
 	margin: 20px;
 }
 
+.social-icons .fab:hover{
+	background-color: #fff;
+	color: #110e09;
+	box-shadow: 0px 0px 14px 2px #fff;
+}
+
 .icon-down{
 	width: 60px;
 	height: 60px;
@@ -249,6 +283,11 @@ img{
 	align-items: center;
 	cursor: pointer;
 	z-index: 2;
+	transition: transform 0.5s;
+}
+
+.icon-down:hover{
+	transform: translate(-50%, 20px);
 }
 
 .icon-down .fas{
@@ -295,6 +334,51 @@ img{
 
 .header-box::after{
 	height: 85%;
+}
+
+.pop-up{
+	width: 100%;
+	height: 100vh;
+	background-color: rgba(0, 0, 0, 0.7);
+	position: fixed;
+	top: 0;
+	z-index: 3;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	visibility: hidden;
+}
+
+.pop-up__container{
+	width: 45%;
+	min-height: 60%;
+	background-color: #fff;
+	border-radius: 20px;
+	box-shadow: 0px 0px 14px 2px #fff;
+	padding: 40px;
+	position: relative;
+}
+
+.closeBtn{
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	cursor: pointer;
+}
+
+.closeBtn:hover{
+	animation: close 0.2s linear 0s 1 normal none;
+}
+
+@keyframes close{
+	0%{
+		transform: rotate(0);
+	}
+	100%{
+		transform: rotate(90deg);
+	}
 }
 
 /*----------main__about-us----------*/
@@ -528,6 +612,12 @@ img{
 	line-height: 20px;
 }
 
+.button:hover{
+	border: 1px solid #e8c300;
+	background-color: #fff;
+	color: #e8c300;
+}
+
 .book-table__bottom{
 	font-size: 12px;
 	line-height: 12px;
@@ -547,16 +637,20 @@ img{
 	position: relative;
 }
 
+.slider-btn{
+	padding: 10px;
+	cursor: pointer;
+}
+
 .slider-circle{
 	width: 10px;
 	height: 10px;
 	border-radius: 50%;
 	background-color: #fff;
 	opacity: 0.5;
-	margin: 0 10px;
 }
 
-.selected{
+.selected .slider-circle{
 	opacity: 1;
 }
 
