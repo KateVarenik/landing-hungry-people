@@ -220,9 +220,10 @@ img{
 }
 
 .btn:hover{
-	box-shadow: 0px 0px 14px 2px #fff;
+	box-shadow: 0px 0px 14px 2px rgba(255, 255, 255, 0.3);
 	background-color: rgba(17, 14, 9, 0.8);
 	color: #e8c300;
+	border: 1px solid rgba(255, 255, 255, 0.5);
 }
 
 .table{
@@ -354,7 +355,7 @@ img{
 	min-height: 60%;
 	background-color: #fff;
 	border-radius: 20px;
-	box-shadow: 0px 0px 14px 2px #fff;
+	box-shadow: 0px 0px 14px 2px rgba(255, 255, 255, 0.5);
 	padding: 40px;
 	position: relative;
 }
@@ -759,29 +760,30 @@ img{
 }
 
 .rotate{
-	/*height: 475.5px;
-	width: 80px;*/
-	height: 83%;
-	width: 14%;
+	height: 14%;
+	width: 83%;
 	background-color: #000;
 	z-index: 2;
 	display: flex;
-	justify-content: center;
+	justify-content: flex-start;
+	align-items: center;
 	flex-wrap: wrap;
 }
 
 .private__rotate-left{
 	position: absolute;
-	right: 8.5%;
-	top: 8.5%;
-	border-radius: 0 5px 5px 0;
+	right: -26%;
+	top: 43%;
+	transform: rotate(90deg);
+	border-radius: 5px 5px 0 0;
 }
 
 .private__rotate-right{
 	position: absolute;
-	left: 8.5%;
-	bottom: 8.5%;
-	border-radius: 5px 0 0 5px;
+	left: -26%;
+	bottom: 43%;
+	transform: rotate(-90deg);
+	border-radius: 5px 5px 0 0;
 }
 
 .rotate p{
@@ -792,17 +794,6 @@ img{
 	flex-basis: 100%;
 	padding: 20px;
 }
-
-.private__rotate-left p{
-	transform: rotate(90deg) translateX(32%);
-	align-self: flex-start;
-}
-
-.private__rotate-right p{
-	transform: rotate(-90deg) translateX(32%);
-	align-self: flex-end;
-}
-
 
 
 /*----------photo-gallery---------*/
@@ -841,6 +832,9 @@ img{
 
 .contact__form{
 	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .contact__form form{
@@ -848,6 +842,7 @@ img{
 	align-items: center;
 	justify-content: space-between;
 	flex-wrap: wrap;
+	max-width: 1278px;
 }
 
 .contact__cell{
