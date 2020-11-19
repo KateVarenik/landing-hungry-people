@@ -256,19 +256,51 @@
 					<div class="top-side">
 						<div class="title">specialties</div>
 					</div>
-					<div class="black-block">
+					<div class="black-block" id="icecream">
 						<div class="black-block__left">
-							<div class="black-block__photo">
-								<img src="img/icecream.png" alt="" id="picture">
+							<div class="black-block__photo specialties__photo">
+								<img src="img/icecream.png" alt="">
 							</div>
 						</div>
 
 						<div class="black-block__right">
-							<div class="black-block__content">
-								<h2 class="black-block__title" id="specialtiesTitle">strawberry ice cream</h2>
-								<p class="black-block__subtitle" id="specialtiesSubtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at velit maximus, molestie est a, tempor magna.</p>
+							<div class="black-block__content specialties__content">
+								<h2 class="black-block__title">strawberry ice cream</h2>
+								<p class="black-block__subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at velit maximus, molestie est a, tempor magna.</p>
 
-								<p class="black-block__text" id="specialtiesText">Integer ullamcorper neque eu purus euismod, ac faucibus mauris posuere. Morbi non ultrices ligula. Sed dictum, enim sed ullamcorper feugiat, dui odio vehicula eros, a sollicitudin lorem quam nec sem. Mauris tincidunt feugiat diam convallis pharetra. Nulla facilisis semper laoreet.</p>
+								<p class="black-block__text">Integer ullamcorper neque eu purus euismod, ac faucibus mauris posuere. Morbi non ultrices ligula. Sed dictum, enim sed ullamcorper feugiat, dui odio vehicula eros, a sollicitudin lorem quam nec sem. Mauris tincidunt feugiat diam convallis pharetra. Nulla facilisis semper laoreet.</p>
+							</div>
+						</div>
+					</div>
+					<div class="black-block" id="pasta">
+						<div class="black-block__left">
+							<div class="black-block__photo specialties__photo">
+								<img src="img/pasta.png" alt="">
+							</div>
+						</div>
+
+						<div class="black-block__right">
+							<div class="black-block__content specialties__content">
+								<h2 class="black-block__title">pasta bolognese</h2>
+								<p class="black-block__subtitle">It’s not an Italian recipe, but spaghetti bolognese has become a popular “Italian” dish. An impossible error to correct – but now the people of Bologna want to adopt it.</p>
+
+								<p class="black-block__text">A mix of beef, chicken and pork mince helps create a sauce that's full of flavour but not too rich, while cloves and nutmeg add a subtly earthy, grounding note to the dish. This is comfort food with class – salute!</p>
+							</div>
+						</div>
+					</div>
+					<div class="black-block" id="pancakes">
+						<div class="black-block__left">
+							<div class="black-block__photo specialties__photo">
+								<img src="img/pancake.png" alt="">
+							</div>
+						</div>
+
+						<div class="black-block__right">
+							<div class="black-block__content specialties__content">
+								<h2 class="black-block__title">chocolate pancakes</h2>
+								<p class="black-block__subtitle">Enjoy chocolate for breakfast with these guilt-free, healthy chocolate pancakes.</p>
+
+								<p class="black-block__text">These fluffy chocolate pancakes are the perfect way for a chocolate lover to start their day! Thick and full of melty chocolate in each bite, this simple recipe gives you a good reason to get out of bed in the morning.</p>
 							</div>
 						</div>
 					</div>
@@ -665,10 +697,9 @@
 	}
 
 	var sliderBtn = document.getElementsByClassName("slider-btn");
-	var picture = document.getElementById("picture");
-	var specialtiesTitle = document.getElementById("specialtiesTitle");
-	var specialtiesSubtitle = document.getElementById("specialtiesSubtitle");
-	var specialtiesText = document.getElementById("specialtiesText");
+	var icecream = document.getElementById("icecream");
+	var pasta = document.getElementById("pasta");
+	var pancakes = document.getElementById("pancakes");
 
 
 	for (let i=0; i<sliderBtn.length; i++){
@@ -680,23 +711,19 @@
 	}
 
 	sliderBtn[0].onclick = function(){
-		picture.src = "img/icecream.png";
-		specialtiesTitle.innerHTML = "strawberry ice cream";
-		specialtiesSubtitle.innerHTML = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at velit maximus, molestie est a, tempor magna.";
-		specialtiesText.innerHTML = "Integer ullamcorper neque eu purus euismod, ac faucibus mauris posuere. Morbi non ultrices ligula. Sed dictum, enim sed ullamcorper feugiat, dui odio vehicula eros, a sollicitudin lorem quam nec sem. Mauris tincidunt feugiat diam convallis pharetra. Nulla facilisis semper laoreet.";
-
+		icecream.style.display = "flex";
+		pasta.style.display = "none";
+		pancakes.style.display = "none";
 	}
 	sliderBtn[1].onclick = function(){
-		picture.src = "img/pasta.png";
-		specialtiesTitle.innerHTML = "pasta bolognese";
-		specialtiesSubtitle.innerHTML = "It’s not an Italian recipe, but spaghetti bolognese has become a popular “Italian” dish. An impossible error to correct – but now the people of Bologna want to adopt it.";
-		specialtiesText.innerHTML = "A mix of beef, chicken and pork mince helps create a sauce that's full of flavour but not too rich, while cloves and nutmeg add a subtly earthy, grounding note to the dish. This is comfort food with class – salute!";
+		icecream.style.display = "none";
+		pasta.style.display = "flex";
+		pancakes.style.display = "none";
 	}
 	sliderBtn[2].onclick = function(){
-		picture.src = "img/pancake.png";
-		specialtiesTitle.innerHTML = "chocolate pancakes";
-		specialtiesSubtitle.innerHTML = "Enjoy chocolate for breakfast with these guilt-free, healthy chocolate pancakes.";
-		specialtiesText.innerHTML = "These fluffy chocolate pancakes are the perfect way for a chocolate lover to start their day! Thick and full of melty chocolate in each bite, this simple recipe gives you a good reason to get out of bed in the morning.";
+		icecream.style.display = "none";
+		pasta.style.display = "none";
+		pancakes.style.display = "flex";
 	}
 
 </script>	
